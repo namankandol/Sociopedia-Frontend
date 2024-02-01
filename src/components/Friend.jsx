@@ -23,7 +23,7 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
 
   const patchFriend = async () => {
     const response = await fetch(
-      `${process.env.HOST}/users/${_id}/${friendId}`,
+      `https://sociopedia-backend-4601.onrender.com/users/${_id}/${friendId}`,
       {
         method: "PATCH",
         headers: {

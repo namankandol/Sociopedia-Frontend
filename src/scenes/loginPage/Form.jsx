@@ -63,10 +63,13 @@ const Form = () => {
     }
     formData.append("picturePath", values.picture.name)
 
-    const savedUserResponse = await fetch(`${process.env.HOST}/auth/register`, {
-      method: "POST",
-      body: formData,
-    })
+    const savedUserResponse = await fetch(
+      `https://sociopedia-backend-4601.onrender.com/auth/register`,
+      {
+        method: "POST",
+        body: formData,
+      }
+    )
     const savedUser = await savedUserResponse.json()
     onSubmitProps.resetForm()
 
@@ -76,11 +79,14 @@ const Form = () => {
   }
 
   const login = async (values, onSubmitProps) => {
-    const loggedInResponse = await fetch(`${process.env.HOST}/auth/login`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(values),
-    })
+    const loggedInResponse = await fetch(
+      `https://sociopedia-backend-4601.onrender.com/auth/login`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(values),
+      }
+    )
     const loggedIn = await loggedInResponse.json()
     onSubmitProps.resetForm()
     if (loggedIn) {

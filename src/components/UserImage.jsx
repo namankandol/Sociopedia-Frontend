@@ -7,7 +7,7 @@ const UserImage = ({ image, size = "60px" }) => {
         style={{ objectFit: "cover", borderRadius: "50%" }}
         width={size}
         height={size}
-        src={`${process.env.HOST}/assets/${image}`}
+        src={`https://sociopedia-backend-4601.onrender.com/assets/${image}`}
         alt="user"
       />
     </Box>
